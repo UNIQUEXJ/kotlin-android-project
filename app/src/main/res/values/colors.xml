@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorTabbar">#F0F0F0</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorText">#333333</color>
+    <color name="colorDetailText">#888</color>
+    <color name="colorTabbarBg">#555</color>
+    <color name="colorMain">#68C39F</color>
+    <color name="colorBg">#F5F5F5</color>
+    <color name="colorWarn">#C62828</color>
+    <color name="colorUnline">#999</color>
+    <color name="colorStop">#FB8C00</color>
+    <color name="colorRun">#009944</color>
+</resources>

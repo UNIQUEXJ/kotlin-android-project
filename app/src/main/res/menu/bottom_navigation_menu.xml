@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/i_equip"
+            android:checked="true"
+            android:icon="@mipmap/icon_device_n"
+            android:title="设备列表"/>
+    <item
+            android:id="@+id/i_warn"
+            android:icon="@mipmap/icon_alert_n"
+            android:title="报警列表"/>
+</menu>

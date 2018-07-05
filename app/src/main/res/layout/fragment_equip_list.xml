@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:background="@color/colorBg"
+             tools:context="com.mengyangsoft.myapplication.Fragments.EquipListFragment">
+
+    <com.mengyangsoft.myapplication.BaseViews.LJNavigationBar android:id="@+id/naviation_bar" android:background="@color/colorMain" android:layout_width="match_parent"
+                                                              android:layout_height="wrap_content">
+
+    </com.mengyangsoft.myapplication.BaseViews.LJNavigationBar>
+    <com.google.android.flexbox.FlexboxLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/naviation_bar"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorBg"
+            app:flexDirection="column">
+
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:layout_height="60dp"
+                android:paddingLeft="10dp"
+                android:hint="请输入搜索内容"
+                android:textColorHint="@color/colorDetailText"
+                android:textColor="@color/colorText"
+                android:background="@drawable/bg_edittext"
+                android:id="@+id/search_editText"/>
+        <ListView android:id="@+id/equip_list_view" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10dp"></ListView>
+    </com.google.android.flexbox.FlexboxLayout>
+
+</RelativeLayout>
