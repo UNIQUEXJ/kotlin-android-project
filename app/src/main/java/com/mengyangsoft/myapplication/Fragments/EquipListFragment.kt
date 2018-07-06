@@ -1,20 +1,16 @@
 package com.mengyangsoft.myapplication.Fragments
 
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import com.mengyangsoft.myapplication.Adapters.EquipListAdapter
 import com.mengyangsoft.myapplication.BaseViews.LJNavigationBar
 import com.mengyangsoft.myapplication.Datas.companyList
+import com.mengyangsoft.myapplication.Datas.equipTypeList
 import com.mengyangsoft.myapplication.Datas.sid
 import com.mengyangsoft.myapplication.Extensions.lj_hud
 import com.mengyangsoft.myapplication.MainActivity
@@ -38,7 +34,6 @@ class EquipListFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         return inflater!!.inflate(R.layout.fragment_equip_list, container, false)
     }
 
@@ -60,50 +55,23 @@ class EquipListFragment : Fragment() {
         naviation_bar.addAction(object : LJNavigationBar.TextAction("筛选") {
             override fun performAction(view: View) {
                 println(companyList.count())
+                println(equipTypeList.size)
+                println(equipListData.size)
             }
         })
         naviation_bar.setActionTextColor(Color.WHITE)
 
-        search_editText.singleLine = true
+        search_editText.changeStr = {
+            keyWords = search_editText.text.toString()
+            println(keyWords)
+        }
 
-        search_editText.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                keyWords = s.toString()
-            }
-
-        })
-        equip_list_view.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+        equip_list_view.clickItem = {position ->
             println(equipListData[position].name)
         }
+
         adapter = EquipListAdapter(equipListData, this.context)
         equip_list_view.adapter = adapter
-
-//        adapter?.clickItem = {index ->
-//            println(index)
-//        }
-
-//        长按删除
-//        equip_list_view.onItemLongClickListener = AdapterView.OnItemLongClickListener { _, _, position, _ ->
-//            val builder = AlertDialog.Builder(this.context)
-//            builder.setMessage("delete?")
-//            builder.setTitle("tip")
-//            builder.setPositiveButton("ok", { _, _ ->
-//                equipListData.removeAt(position)
-//                adapter?.updateData(equipListData, equip_list_view)
-//            })
-//            builder.setNegativeButton("cancel", {_, _ ->})
-//            builder.create().show()
-//            println(equipListData[position].name)
-//            true
-//        }
     }
 
     private fun goLogin() {
@@ -132,5 +100,4 @@ class EquipListFragment : Fragment() {
             adapter?.updateData(equipListData, equip_list_view)
         }
     }
-
-}// Required empty public constructor
+}

@@ -26,7 +26,7 @@ interface RetrofitServer {
 object NetServer {
     //单例模式
     val retrofitServer: RetrofitServer by lazy {
-        Retrofit.Builder().baseUrl("http://112.80.94.180:8080/a/api/").addConverterFactory(GsonConverterFactory.create())
+        Retrofit.Builder().baseUrl("http://112.80.94.183:8080/a/api/").addConverterFactory(GsonConverterFactory.create())
                 .build().create(RetrofitServer::class.java)
     }
 }

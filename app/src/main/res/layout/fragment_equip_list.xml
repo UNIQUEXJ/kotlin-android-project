@@ -23,7 +23,7 @@
             app:flexDirection="column">
 
 
-        <EditText
+        <com.mengyangsoft.myapplication.Views.LJSearchView
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="10px"
                 android:layout_marginRight="10px"
@@ -34,7 +34,11 @@
                 android:textColor="@color/colorText"
                 android:background="@drawable/bg_edittext"
                 android:id="@+id/search_editText"/>
-        <ListView android:id="@+id/equip_list_view" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10dp"></ListView>
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@+id/equip_list_refresh" android:layout_width="match_parent"
+                                                           android:layout_height="match_parent">
+            <com.mengyangsoft.myapplication.Views.LJListView android:id="@+id/equip_list_view" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10dp"></com.mengyangsoft.myapplication.Views.LJListView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
     </com.google.android.flexbox.FlexboxLayout>
 
 </RelativeLayout>
